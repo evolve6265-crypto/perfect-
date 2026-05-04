@@ -106,4 +106,4 @@ async function playSong(guild, song, connection) {
     serverQueue.player.on('error', error => console.error(error));
 }
 
-client.login('MTUwMDcwMTc0NTI2MzY3NzU1MA.G9ol8l.4tfDc9oGT4XYlG7dE_rVuSwbga86sUdr5DotV8');
+client.login('MTUwMDcwMTc0NTI2MzY3NzU1MA.GM9PRB.bxVZBW3YEDwFgWjooHCuT8-IG08GLiW5nowmzg');
