@@ -1,0 +1,21 @@
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+
+module.exports = {
+  data: new SlashCommandBuilder().setName('nowplaying').setDescription('Current song'),
+
+  async execute(interaction, client) {
+    const player = client.manager.players.get(interaction.guild.id);
+
+    if (!player) return interaction.reply('Nothing playing');
+
+    const track = player.queue.current;
+
+    const embed = new EmbedBuilder()
+      .setColor('#AEEFFF')
+      .setTitle('❄️ Aurelia Player')
+      .setDescription(`🎶 ${track.title}`)
+      .setFooter({ text: 'Winter Monarch • Stay Frosty' });
+
+    interaction.reply({ embeds: [embed] });
+  }
+};
